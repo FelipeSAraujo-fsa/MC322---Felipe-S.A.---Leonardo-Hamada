@@ -1,0 +1,46 @@
+public class materiaPrima {
+
+    private String id;
+    private String tipo;
+    private String unidade;
+    private double quant;
+    private double quantMin;
+
+    public materiaPrima (String id, String tipo, String unidade){
+        this.id = id;
+        this.tipo = tipo;
+        this.unidade = unidade;
+        this.quant = 0.0;
+        this.quantMin = 0.0;
+    }
+
+    public String getId(){
+        return id;
+    }
+    public String getTipo(){
+        return tipo;
+    }
+    public double getQuant(){
+        return quant;
+    }
+
+    public double addEstoque (double valor){
+        return this.quant += valor;
+    }
+
+    public boolean verificDisp (){
+        if (quant < quantMin){
+            return false;
+        } else{
+            return true;
+        }
+    }
+
+    public void consumir(){
+        if (verificDisp()){
+            this.quant -= quantMin;
+        }else{
+            System.out.println("erro");
+        }
+    }
+}
