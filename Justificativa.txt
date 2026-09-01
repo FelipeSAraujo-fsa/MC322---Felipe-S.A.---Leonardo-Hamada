@@ -1,0 +1,7 @@
+O tema da fábrica escolhida foi PCBs (Placas de circuito impresso).
+A dupla escolheu esse tema pela familiaridade pela participação em equipes extra curriculares, 
+além do interesse comum pelo tema e a relação com o curso de Engenharia de Controle e Automação.
+
+Sobre a visão de expansão futura, é possivel aumentar a planta industrial pensando em novos processos tal como:
+soldagem de componentes, desenvolvimento de produtos eletronicos completos e aumento da complexidade do produto
+(mais camadas, mais materiais e etc).
