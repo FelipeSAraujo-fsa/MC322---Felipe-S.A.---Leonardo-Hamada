@@ -3,15 +3,15 @@ public class materiaPrima {
     private String id;
     private String tipo;
     private String unidade;
-    private double quant;
-    private double quantMin;
+    private int quant;
+    private int quantMin;
 
     public materiaPrima (String id, String tipo, String unidade){
         this.id = id;
         this.tipo = tipo;
         this.unidade = unidade;
-        this.quant = 0.0;
-        this.quantMin = 0.0;
+        this.quant = 0;
+        this.quantMin = 0;
     }
 
     public String getId(){
@@ -28,11 +28,11 @@ public class materiaPrima {
         return this.quant += valor;
     }
 
-    public boolean verificDisp (){
-        if (quant < quantMin){
-            return false;
-        } else{
+    public boolean verificDisp(int demanda){
+        if (quant >= demanda){
             return true;
+        } else{
+            return false;
         }
     }
 

@@ -28,7 +28,7 @@ public class maquina {
         }
     }
 
-    public Produto processar(materiaPrima materiaprima, int demanda) {
+    public produto processar(materiaPrima materiaprima, int demanda) {
         if (demanda > capacidadeMax) {
             System.out.println("A demanda ultrapassa a capacidade maxima da maquina");
             return null;
@@ -39,7 +39,7 @@ public class maquina {
             return null;
         }
 
-        if (!materiaprima.verificarDisp()) {
+        if (!materiaprima.verificarDisp(int demanda)) {
             System.out.println("Nao ha materia prima suficiente");
             return null;
         }
