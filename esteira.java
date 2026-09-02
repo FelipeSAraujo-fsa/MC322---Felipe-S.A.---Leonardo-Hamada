@@ -11,19 +11,19 @@ public class esteira {
 
     public void ligar() {
         if (emMovimento) {
-            System.out.println("A Esteira" + item + " ja esta ligada");
+            System.out.println("A Esteira ja esta ligada");
         } else {
             emMovimento = true;
-            System.out.println("A Esteira" + item + " ligada");
+            System.out.println("A Esteira foi ligada");
         }
     }
 
     public void desligar() {
         if (emMovimento) {
             emMovimento = false;
-            System.out.println("A Esteira " + item + " desligada");
+            System.out.println("A Esteira foi desligada");
         } else {
-            System.out.println("A Esteira " + item + " ja esta desligada");
+            System.out.println("A Esteira ja esta desligada");
         }
     }
 
@@ -41,8 +41,7 @@ public class esteira {
         return true;
     }
 
-    public boolean adcicionaritem(produto produtoTransportado) {
-
+    public boolean adicionarItem(produto produtoTransportado) {
         if (!emMovimento) {
             System.out.println("A Esteira esta desligada");
             return false;
@@ -52,32 +51,31 @@ public class esteira {
             return false;
         }
         item = produtoTransportado.getId();
-        System.out.println("O produto "+ produtoTransportado.getId()+ " esta sendo transportado pela esteira "+ item);
+        System.out.println("O produto " + produtoTransportado.getId() + " esta sendo transportado pela esteira");
         return true;
     }
 
-    public void verificarCapacidade(produto produtoTransportado, int quantidade){
-        if (capacidadeMax < quantidade) {
-            System.out.println("A esteira Excedeu o limite de quantidade" );
-        } else{
-            System.out.println("O produto " + produtoTransportado.getId()+ " foi adcionado" );
+    // Verifica se a quantidade cabe na capacidade maxima da esteira.
+    public boolean verificarCapacidade(int quantidade) {
+        if (quantidade > capacidadeMax) {
+            System.out.println("A esteira excedeu o limite de capacidade");
+            return false;
         }
+        return true;
     }
 
-    public String removerItem(){
+    public String removerItem() {
         if (item == null) {
-            System.out.println("A esteira esta vazia, não há itens para remover");
+            System.out.println("A esteira esta vazia, nao ha itens para remover");
             return null;
         }
         String itemRemovido = item;
         item = null;
-        System.out.println("O item "+itemRemovido+" foi removido da esteira");
+        System.out.println("O item " + itemRemovido + " foi removido da esteira");
         return itemRemovido;
     }
 
     public boolean estaEmMovimento() {
         return emMovimento;
     }
-        
-
 }
