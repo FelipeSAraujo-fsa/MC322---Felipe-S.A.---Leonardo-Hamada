@@ -28,7 +28,7 @@ public class estacaoInspecao {
     public void inspecionar(produto produtoEscolhido) {
         if (ativa) {
             produtoEscolhido.inspecionarProd();
-            produtosInspecionados = +produtoEscolhido.getquantProd();
+            produtosInspecionados += produtoEscolhido.getquantProd();
             System.out.println("O Produto "+produtoEscolhido.getId()+" foi inspecionado");
         }else {
             System.out.println("A estação de inspeção esta desativada");

@@ -27,6 +27,20 @@ public class esteira {
         }
     }
 
+    public boolean adicionaritem(materiaPrima materiaTransportada) {
+        if (!emMovimento) {
+            System.out.println("A Esteira esta desligada");
+            return false;
+        }
+        if (item != null) {
+            System.out.println("A Esteira ja possui um item, nao pode aceitar outro");
+            return false;
+        }
+        item = materiaTransportada.getId();
+        System.out.println("A materia-prima " + materiaTransportada.getId() + " foi colocada na esteira");
+        return true;
+    }
+
     public void adcicionarItem(produto produtoTransportado) {
 
         if (!emMovimento) {

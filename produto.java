@@ -18,7 +18,7 @@ public class produto {
     public void processar(int quantProduzida) {
         status = "Processado";
         quantProd = quantProduzida;
-        quantTotal = +quantProduzida;
+        quantTotal += quantProduzida;
         System.out.println("O produto " + nome + " foi processado");
     }
 
