@@ -27,7 +27,7 @@ public class esteira {
         }
     }
 
-    public void transportar(produto produtoTransportado) {
+    public void adcicionarItem(produto produtoTransportado) {
 
         if (!emMovimento) {
             System.out.println("A Esteira esta desligada");
@@ -40,6 +40,16 @@ public class esteira {
                         + " esta sendo transportado pela esteira "
                         + item);
     }
-}
 
-    public void
+    public void verificarCapacidade(produto produtoTransportado, int quantidade){
+        if (capacidadeMax < quantidade) {
+            System.out.println("A esteira Excedeu o limite de quantidade" );
+        } else{
+            System.out.println("O produto " + produtoTransportado.getId()+ " foi adcionado" );
+        }
+    }
+
+    public void removerItem(produto produtoRetirado){
+        System.out.println("O produto" + produtoRetirado.getId()+ "foi retirado" );
+    }
+}

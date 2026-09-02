@@ -6,10 +6,10 @@ public class materiaPrima {
     private int quant;
     private int quantMin;
 
-    public materiaPrima (String id, String tipo, String unidade){
+    public materiaPrima (String id, String tipo){
         this.id = id;
         this.tipo = tipo;
-        this.unidade = unidade;
+        this.unidade = "KG";
         this.quant = 0;
         this.quantMin = 0;
     }
@@ -41,7 +41,7 @@ public class materiaPrima {
             quant = quant - ((demanda/produtoEscolhido.getDemandaMateriaPrima())*produtoEscolhido.getDemandaMateriaPrima());
         }
         else{
-            return;
+            System.out.println("Não há a quantidade necessária no estoque para suprir a demanda");
         }
     }
 }
