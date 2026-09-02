@@ -36,11 +36,12 @@ public class materiaPrima {
         }
     }
 
-    public void consumir(){
-        if (verificDisp()){
-            this.quant -= quantMin;
-        }else{
-            System.out.println("erro");
+    public void consumir(int demanda, produto produtoEscolhido){
+        if (verificDisp(demanda)) {
+            quant = quant - ((demanda/produtoEscolhido.getDemandaMateriaPrima())*produtoEscolhido.getDemandaMateriaPrima());
+        }
+        else{
+            return;
         }
     }
 }

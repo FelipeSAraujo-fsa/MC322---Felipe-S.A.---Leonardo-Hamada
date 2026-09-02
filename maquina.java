@@ -28,7 +28,7 @@ public class maquina {
         }
     }
 
-    public produto processar(materiaPrima materiaprima, int demanda) {
+    public produto processar(materiaPrima materiaprima, int demanda, produto produtoEscolhido) {
         if (demanda > capacidadeMax) {
             System.out.println("A demanda ultrapassa a capacidade maxima da maquina");
             return null;
@@ -39,20 +39,19 @@ public class maquina {
             return null;
         }
 
-        if (!materiaprima.verificarDisp(int demanda)) {
+        if (!materiaprima.verificDisp(demanda)) {
             System.out.println("Nao ha materia prima suficiente");
             return null;
         }
+        int quantidadeProduzida =
+            demanda / produtoEscolhido.getDemandaMateriaPrima();
 
-        materiaprima.consumir();
+        materiaprima.consumir(demanda, produtoEscolhido);
 
-        Produto produtoFinal = new Produto();
-
-        produto.processar();
-
-        System.out.println("Produto processado com sucesso");
-
-        return produtoFinal;
+        produtoEscolhido.processar(quantidadeProduzida);
+        System.out.println("Foram produzidas "+ quantidadeProduzida+ " unidades de "+ produtoEscolhido.getNome());
+        
+        return produtoEscolhido;
     }
 
     public String getNome(){
@@ -69,5 +68,4 @@ public class maquina {
             return false;
         }
     } 
-
 }

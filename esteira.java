@@ -3,28 +3,43 @@ public class esteira {
     private boolean emMovimento;
     private int capacidadeMax;
 
-    public esteira(String item, boolean emMovimento, int capacidadeMax){
+    public esteira(String item, boolean emMovimento, int capacidadeMax) {
         this.item = item;
         this.emMovimento = emMovimento;
         this.capacidadeMax = capacidadeMax;
     }
 
-    public void ligar(){
+    public void ligar() {
         if (emMovimento) {
-            System.out.println("A Esteira" +item+ " ja esta ligada");
-        }
-        else {
+            System.out.println("A Esteira" + item + " ja esta ligada");
+        } else {
             emMovimento = true;
-            System.out.println("A Esteira" +item+ " ligada");
+            System.out.println("A Esteira" + item + " ligada");
         }
     }
 
-    public void desligar(){
-        if(emMovimento) {
+    public void desligar() {
+        if (emMovimento) {
             emMovimento = false;
-            System.out.println("A Esteira " +item+ " desligada");
+            System.out.println("A Esteira " + item + " desligada");
         } else {
-            System.out.println("A Esteira " +item+ " ja esta desligada");
+            System.out.println("A Esteira " + item + " ja esta desligada");
         }
     }
+
+    public void transportar(produto produtoTransportado) {
+
+        if (!emMovimento) {
+            System.out.println("A Esteira esta desligada");
+            return;
+        }
+
+        System.out.println(
+                "O produto "
+                        + produtoTransportado.getId()
+                        + " esta sendo transportado pela esteira "
+                        + item);
+    }
 }
+
+    public void
