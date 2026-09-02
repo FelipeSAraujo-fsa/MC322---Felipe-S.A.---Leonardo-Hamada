@@ -27,7 +27,7 @@ public class esteira {
         }
     }
 
-    public boolean adicionaritem(materiaPrima materiaTransportada) {
+    public boolean adicionarItem(materiaPrima materiaTransportada) {
         if (!emMovimento) {
             System.out.println("A Esteira esta desligada");
             return false;
@@ -41,18 +41,19 @@ public class esteira {
         return true;
     }
 
-    public void adcicionarItem(produto produtoTransportado) {
+    public boolean adcicionaritem(produto produtoTransportado) {
 
         if (!emMovimento) {
             System.out.println("A Esteira esta desligada");
-            return;
+            return false;
         }
-
-        System.out.println(
-                "O produto "
-                        + produtoTransportado.getId()
-                        + " esta sendo transportado pela esteira "
-                        + item);
+        if (item != null) {
+            System.out.println("A Esteira ja possui um item, nao pode aceitar outro");
+            return false;
+        }
+        item = produtoTransportado.getId();
+        System.out.println("O produto "+ produtoTransportado.getId()+ " esta sendo transportado pela esteira "+ item);
+        return true;
     }
 
     public void verificarCapacidade(produto produtoTransportado, int quantidade){
@@ -63,7 +64,20 @@ public class esteira {
         }
     }
 
-    public void removerItem(produto produtoRetirado){
-        System.out.println("O produto" + produtoRetirado.getId()+ "foi retirado" );
+    public String removerItem(){
+        if (item == null) {
+            System.out.println("A esteira esta vazia, não há itens para remover");
+            return null;
+        }
+        String itemRemovido = item;
+        item = null;
+        System.out.println("O item "+itemRemovido+" foi removido da esteira");
+        return itemRemovido;
     }
+
+    public boolean estaEmMovimento() {
+        return emMovimento;
+    }
+        
+
 }
