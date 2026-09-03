@@ -11,45 +11,47 @@ public class maquina {
 
     public void ligar(){
         if (ligada) {
-            System.out.println("A Maquina " +id+ " ja esta ligada");
+            System.out.println("[ERRO] A Maquina " +id+ " ja esta ligada");
         }
         else {
             ligada = true;
-            System.out.println("A Maquina " +id+ " ligada");
+            System.out.println("[OK] A Maquina " +id+ " foi ligada");
         }
     }
     
     public void desligar(){
         if(ligada) {
             ligada = false;
-            System.out.println("A Maquina " +id+ " desligada");
+            System.out.println("[OK] A Maquina " +id+ " foi desligada");
         } else {
-            System.out.println("A Maquina " +id+ " ja esta desligada");
+            System.out.println("[ERRO] A Maquina " +id+ " ja esta desligada");
         }
     }
 
     public produto processar(materiaPrima materiaprima, int demanda, produto produtoEscolhido) {
         if (demanda > capacidadeMax) {
-            System.out.println("A demanda ultrapassa a capacidade maxima da maquina");
+            System.out.println("[ERRO] A demanda ultrapassa a capacidade maxima da maquina");
             return null;
         }
 
         if (!ligada) {
-            System.out.println("A Maquina " +id+ " esta desligada e nao pode processar");
+            System.out.println("[ERRO] A Maquina " +id+ " esta desligada e nao pode processar");
             return null;
         }
 
         if (!materiaprima.verificDisp(demanda)) {
-            System.out.println("Nao ha materia prima suficiente");
+            System.out.println("[ERRO] Nao ha materia prima suficiente");
             return null;
         }
+        
+
         int quantidadeProduzida =
             demanda / produtoEscolhido.getDemandaMateriaPrima();
 
         materiaprima.consumir(demanda, produtoEscolhido);
 
         produtoEscolhido.processar(quantidadeProduzida);
-        System.out.println("Foram produzidas "+ quantidadeProduzida+ " unidades de "+ produtoEscolhido.getNome());
+        System.out.println("[OK] Foram produzidas "+ quantidadeProduzida+ " unidades de "+ produtoEscolhido.getNome());
         
         return produtoEscolhido;
     }
@@ -60,11 +62,11 @@ public class maquina {
 
     public boolean estaLigada(){
         if (ligada) {
-            System.out.println("A Maquina " +id+ " esta ligada");
+            System.out.println("[OK] A Maquina " +id+ " esta ligada");
             return true;
         }
         else {
-            System.out.println("A Maquina " +id+ " nao esta ligada");
+            System.out.println("[ERRO] A Maquina " +id+ " nao esta ligada");
             return false;
         }
     } 

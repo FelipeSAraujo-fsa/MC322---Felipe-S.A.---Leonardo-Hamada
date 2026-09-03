@@ -41,7 +41,7 @@ public class materiaPrima {
             quant = quant - ((demanda/produtoEscolhido.getDemandaMateriaPrima())*produtoEscolhido.getDemandaMateriaPrima());
         }
         else{
-            System.out.println("Não há a quantidade necessária no estoque para suprir a demanda");
+            System.out.println("[ERRO] Não há a quantidade necessária no estoque para suprir a demanda");
         }
     }
 }

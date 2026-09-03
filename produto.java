@@ -19,7 +19,7 @@ public class produto {
         status = "Processado";
         quantProd = quantProduzida;
         quantTotal += quantProduzida;
-        System.out.println("O produto " + nome + " foi processado");
+        System.out.println("[OK] O produto " + nome + " foi processado");
     }
 
     public void inspecionarProd() {
@@ -29,7 +29,7 @@ public class produto {
     public void definirDemandaMateriaPrima(int demanda) {
         quantidadeMateriaPrimaNecessaria = demanda;
 
-        System.out.println("A demanda de materia prima do produto "  + nome  + " foi definida como " + demanda);
+        System.out.println("[OK] A demanda de materia prima do produto "  + nome  + " foi definida como " + demanda);
     }
 
     public int getDemandaMateriaPrima() {
