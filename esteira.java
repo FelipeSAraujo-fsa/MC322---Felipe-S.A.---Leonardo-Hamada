@@ -37,7 +37,7 @@ public class esteira {
             return false;
         }
         item = materiaTransportada.getId();
-        System.out.println("A materia-prima " + materiaTransportada.getId() + " foi colocada na esteira");
+        System.out.println("[OK] A materia-prima " + materiaTransportada.getId() + " foi colocada na esteira");
         return true;
     }
 
